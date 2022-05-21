@@ -1,0 +1,153 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context=".FullscreenActivity" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="#33b5e5"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <!--
+         This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows.
+    -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true" >
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent" >
+
+            <Button
+                android:id="@+id/dummy_button"
+                style="?buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dummy_button" />
+        </LinearLayout>
+
+        <RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:id="@+id/top_controls">
+            
+			<TextView
+			    android:id="@+id/textViewLoanAmount"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Loan Amount"/>
+	        <EditText
+	            android:id="@+id/editTextLoanAmount"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+			    android:inputType="number"
+	            android:ems="10" 
+	            android:text="15000"
+	            android:layout_below="@+id/textViewLoanAmount" >
+	
+	            <requestFocus />
+	        </EditText>
+		            
+			<TextView
+			    android:id="@+id/textViewInterestRate"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Interest Rate"
+	            android:layout_below="@+id/editTextLoanAmount" />
+	        <EditText
+	            android:id="@+id/editTextInterestRate"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+			    android:inputType="numberDecimal"
+	            android:ems="10" 
+	            android:text="4.5"
+	            android:layout_below="@+id/textViewInterestRate" >
+	        </EditText>
+		            
+			<TextView
+			    android:id="@+id/textViewPaymentAmount"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Monthly Payment Amount"
+	            android:layout_below="@+id/editTextInterestRate" />
+	        <EditText
+	            android:id="@+id/editTextPaymentAmount"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+			    android:inputType="numberDecimal"
+	            android:ems="10" 
+	            android:text="150.00"
+	            android:layout_below="@+id/textViewPaymentAmount" >
+	        </EditText>
+		            
+			<TextView
+			    android:id="@+id/textViewNumberPayments"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Monthly Payments"
+	            android:layout_below="@+id/editTextPaymentAmount" />
+	        <EditText
+	            android:id="@+id/editTextNumberPayments"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+			    android:inputType="numberDecimal"
+	            android:ems="10" 
+	            android:text=""
+	            android:layout_below="@+id/textViewNumberPayments"
+	            android:enabled="false" >
+	        </EditText>
+		            
+			<TextView
+			    android:id="@+id/textViewPayoffDate"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="Payoff Date"
+	            android:layout_below="@+id/editTextNumberPayments" />
+	        <EditText
+	            android:id="@+id/editTextPayoffDate"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+			    android:inputType="date"
+	            android:ems="10" 
+	            android:text=""
+	            android:layout_below="@+id/textViewPayoffDate"
+	            android:enabled="false" >
+	        </EditText>
+
+		<Button
+		    android:id="@+id/buttonCalculate"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+	    	android:layout_below="@+id/editTextPayoffDate"
+		    android:text="Calculate"
+		    android:layout_marginLeft="77dp"
+		    android:layout_marginTop="14dp" />
+	        	        	        	        	        
+		</RelativeLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

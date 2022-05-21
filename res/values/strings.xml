@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pocket Loan Calculator</string>
+    <string name="dummy_button">Exit</string>
+    <string name="dummy_content">Pocket\nLoan\nCalculator</string>
+
+</resources>
